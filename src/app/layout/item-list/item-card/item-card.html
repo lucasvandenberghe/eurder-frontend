@@ -5,7 +5,7 @@
     <div>Price: &euro; {{ item().price.toFixed(2) }}</div>
     @if (stockIconUrl() !== undefined) {
       <div class="stock">
-        <span>{{ item().stockUrgency.toLowerCase().slice('stock_'.length) }}</span>
+        <span>{{ item().stockUrgency.slice('STOCK_'.length) }}</span>
         <img class="icon" [src]="stockIconUrl()" alt="warning">
       </div>
     }
