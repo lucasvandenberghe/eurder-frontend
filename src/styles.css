@@ -72,13 +72,6 @@ nav > a:hover {
 .section-title {
   font-size: 25px;
   font-weight: 500;
-
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-
-  border-bottom-color: black;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
 }
 
 form {
@@ -197,4 +190,21 @@ form {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+
+  border-bottom-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+.section-filter {
+  width: auto;
 }
