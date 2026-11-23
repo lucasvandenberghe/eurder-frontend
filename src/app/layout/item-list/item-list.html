@@ -1,20 +1,16 @@
-<main>
-  <section>
-    <div class="section-header">
-      <h3 class="section-title">Items</h3>
-      <input placeholder="Filter by name..." [(ngModel)]="searchText" class="form-control section-filter" />
-    </div>
+<div class="section-header">
+  <h3 class="section-title">Items</h3>
+  <input placeholder="Filter by name..." [(ngModel)]="searchText" class="form-control section-filter" />
+</div>
 
-    @if (items.isLoading()) {
-      <p>Loading items...</p>
-    } @else if (items.error()) {
-      <p>Could not fetch items.</p>
-    } @else if (items.hasValue()) {
-      <ul class="card-list">
-        @for (item of filteredItems(); track item.id) {
-          <app-item-card [item]="item" />
-        }
-      </ul>
+@if (items.isLoading()) {
+  <p>Loading items...</p>
+} @else if (items.error()) {
+  <p>Could not fetch items.</p>
+} @else if (items.hasValue()) {
+  <ul class="card-list">
+    @for (item of filteredItems(); track item.id) {
+      <app-item-card [item]="item" />
     }
-  </section>
-</main>
+  </ul>
+}
