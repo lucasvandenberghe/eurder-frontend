@@ -1,0 +1,20 @@
+.row-partial {
+  width: 65%;
+}
+
+.input-prefix-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-prefix {
+  position: absolute;
+  left: 0.75rem;
+  pointer-events: none;
+  color: inherit;
+}
+
+.input-with-prefix {
+  padding-left: 2rem;
+}

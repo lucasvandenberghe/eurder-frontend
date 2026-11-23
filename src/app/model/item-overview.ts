@@ -1,7 +1,3 @@
-export interface ItemOverview {
-  id: string;
-  name: string;
-  price: number;
-  amountOfStock: number;
-  stockUrgency: string;
-}
+import { Item } from './item';
+
+export interface ItemOverview extends Omit<Item, 'description'> {}

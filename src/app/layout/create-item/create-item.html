@@ -1,0 +1,56 @@
+<div class="section-header">
+  <h3 class="section-title">Create Item</h3>
+</div>
+
+<form [formRoot]="itemForm">
+  <div class="row">
+    <div class="col-1">
+      <label class="form-label" for="name">Name</label>
+      <input class="form-control" id="name" type="text" [formField]="itemForm.name"
+             [class.has-error]="itemForm.name().touched() && itemForm.name().errors().length > 0" />
+      @if (itemForm.name().touched() && itemForm.name().errors().length > 0) {
+        <p class="form-control-error">{{ itemForm.name().errors()[0].message }}</p>
+      }
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-1">
+      <label class="form-label" for="description">Description</label>
+      <textarea class="form-control" id="description" rows="4" [formField]="itemForm.description"
+                [class.has-error]="itemForm.description().touched() && itemForm.description().errors().length > 0"></textarea>
+      @if (itemForm.description().touched() && itemForm.description().errors().length > 0) {
+        <p class="form-control-error">{{ itemForm.description().errors()[0].message }}</p>
+      }
+    </div>
+  </div>
+
+  <div class="row row-partial">
+    <div class="col-1">
+      <label class="form-label" for="price">Price</label>
+      <div class="input-prefix-group">
+        <span class="input-prefix">€</span>
+        <input class="form-control input-with-prefix" id="price" type="number" [formField]="itemForm.price"
+               [class.has-error]="itemForm.price().touched() && itemForm.price().errors().length > 0" />
+      </div>
+      @if (itemForm.price().touched() && itemForm.price().errors().length > 0) {
+        <p class="form-control-error">{{ itemForm.price().errors()[0].message }}</p>
+      }
+    </div>
+
+    <div class="col-1">
+      <label class="form-label" for="stock">Amount of Stock</label>
+      <input class="form-control" id="stock" type="number" [formField]="itemForm.amountOfStock"
+             [class.has-error]="itemForm.amountOfStock().touched() && itemForm.amountOfStock().errors().length > 0" />
+      @if (itemForm.amountOfStock().touched() && itemForm.amountOfStock().errors().length > 0) {
+        <p class="form-control-error">{{ itemForm.amountOfStock().errors()[0].message }}</p>
+      }
+    </div>
+  </div>
+
+  <div class="row">
+    <button class="col-4 btn btn-create" type="submit">CREATE</button>
+    <button class="col-1 btn">CANCEL</button>
+  </div>
+</form>
+
