@@ -1,0 +1,17 @@
+<main>
+  <section>
+    <h3 class="section-title">Items</h3>
+
+    @if (items.isLoading()) {
+      <p>Loading items...</p>
+    } @else if (items.error()) {
+      <p>Could not fetch items.</p>
+    } @else if (items.hasValue()) {
+      <ul class="card-list">
+        @for (item of items.value(); track item.id) {
+          <app-item-card [item]="item"/>
+        }
+      </ul>
+    }
+  </section>
+</main>
