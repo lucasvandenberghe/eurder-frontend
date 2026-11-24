@@ -223,7 +223,5 @@ textarea.form-control {
 }
 
 .form-control-error {
-  margin-top: 10px;
-
   color: red;
 }

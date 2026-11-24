@@ -19,9 +19,13 @@
       <label class="form-label" for="description">Description</label>
       <textarea class="form-control" id="description" rows="4" [formField]="itemForm.description"
                 [class.has-error]="itemForm.description().touched() && itemForm.description().errors().length > 0"></textarea>
-      @if (itemForm.description().touched() && itemForm.description().errors().length > 0) {
-        <p class="form-control-error">{{ itemForm.description().errors()[0].message }}</p>
-      }
+      <div class="description-error-char-count-container">
+        @if (itemForm.description().touched() && itemForm.description().errors().length > 0) {
+          <p class="form-control-error">{{ itemForm.description().errors()[0].message }}</p>
+        }
+        <app-character-counter [characterCount]="itemForm.description().value().length"
+                               [maxCharCount]="MAX_CHARACTER_COUNT_DESCRIPTION" />
+      </div>
     </div>
   </div>
 
@@ -50,7 +54,7 @@
 
   <div class="row">
     <button class="col-4 btn btn-create" type="submit">CREATE</button>
-    <button class="col-1 btn">CANCEL</button>
+    <button routerLink="/items" class="col-1 btn">CANCEL</button>
   </div>
 </form>
 
