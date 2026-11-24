@@ -18,3 +18,18 @@
 .input-with-prefix {
   padding-left: 2rem;
 }
+
+app-character-counter {
+  display: block;
+  margin-left: auto;
+}
+
+.description-error-char-count-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.25rem;
+}
+
+.form-control-error {
+  margin-top: 0.25rem;
+}
